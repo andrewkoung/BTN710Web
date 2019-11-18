@@ -18,7 +18,7 @@ class Login extends Component {
     authListener() {
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-                    window.open('resource');
+                    this.props.history.push('/resource');
                 }
         });
     } 
@@ -46,6 +46,7 @@ class Login extends Component {
             <div className="App">
                 <form onSubmit={this.onSubmit}>
                     <div>
+                        <h1 style={{paddingBottom: '100px'}}>BTN710 Resource Portal</h1>
                         <label>
                             Username:
                             <input type="text" name="username" value={this.state.email} onChange={this.handleEmailChange} />
@@ -54,7 +55,7 @@ class Login extends Component {
                     <div>
                         <label>
                             Password:
-                            <input type="text" name="password" value={this.state.password} onChange={this.handlePasswordChange} />
+                            <input type="password" name="password" value={this.state.password} onChange={this.handlePasswordChange} />
                         </label>
                     </div>
                     <div>
