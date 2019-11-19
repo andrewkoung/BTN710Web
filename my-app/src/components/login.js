@@ -4,9 +4,8 @@ import firebase from 'firebase';
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = { email: '', password: '', error: '', loading: false };
+        this.state = { password: '', error: '', loading: false };
         this.onSubmit = this.onSubmit.bind(this);
-        this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
     }
 
@@ -26,16 +25,11 @@ class Login extends Component {
     onSubmit(event) {
         event.preventDefault();
         //Attempts to sign in
-        console.log(this.state.email, this.state.password)
-        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch((e) => {
+        firebase.auth().signInWithEmailAndPassword("apkoung@myseneca.ca", this.state.password).catch((e) => {
             console.log(e);
             this.setState({ error: "Invalid Credentials" });
         })
     }
-
-    handleEmailChange (e) {
-        this.setState({email: e.target.value});
-     }
 
      handlePasswordChange (e) {
         this.setState({password: e.target.value});
@@ -47,10 +41,6 @@ class Login extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div>
                         <h1 style={{paddingBottom: '100px'}}>BTN710 Resource Portal</h1>
-                        <label>
-                            Username:
-                            <input type="text" name="username" value={this.state.email} onChange={this.handleEmailChange} />
-                        </label>
                     </div>
                     <div>
                         <label>

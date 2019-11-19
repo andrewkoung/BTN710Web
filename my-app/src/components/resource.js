@@ -21,6 +21,7 @@ class Resource extends Component {
                 </div>
                 <div className="App">
                     <h1>Video Presentation Link</h1>
+                    <a href="https://youtu.be/UUB4WLglxxQ">Link to the video presentation</a>
                     <h1>Report</h1>
                     <img src={require("../media/page1.PNG")}></img>
                     <img src={require("../media/page2.PNG")}></img>

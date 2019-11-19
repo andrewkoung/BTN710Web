@@ -2,10 +2,6 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "engines": { 
-	"node": "10.15.1",
-	"npm": "6.4.1"
-  }
   "dependencies": {
     "firebase": "^7.4.0",
     "react": "^16.11.0",
